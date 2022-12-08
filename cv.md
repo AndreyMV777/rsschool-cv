@@ -12,9 +12,10 @@ At this point in time, I am pursuing the goal of becoming a developer so that I 
 -	Kuban State Agrarian University
 -	Institute of Economics and Entrepreneurship
 -	Kuban State University
+
 I am the author of many scientific articles on economics and jurisprudence.
 Level of English proficiency: pre-intermediate.
 
 ## Awards:
-- Diploma for scientific contribution to the development of the economy of the Krasnodar Territory.
+- Diploma for scientific contribution to the development of the economy of the Krasnodar region.
 - A medal by decree of the President of the Russian Federation for active participation in the population census.
