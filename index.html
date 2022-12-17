@@ -6,14 +6,417 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Markov Andrey</title>
     <link rel="icon" type="image/x-icon" href="favicon.png">
-    <link rel="stylesheet" href="css/styles.css"> 
+
 </head>
+<style>
+/* CSS Reset start */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+ul{
+    list-style: none;
+}
+/* CSS Reset end */
+/* Variability Start */
+:root {
+    --main-color: #f0ae12;
+    --text-color: #363636;
+    --white: #ffffff;
+    --gray: #f3f4f5;
+    --light-gray: #e1e1e1;
+    --orange: #d6932e;
+  }
+
+body{
+	width: 100%;
+	font-family: 'ralewayregular';
+	color: var(--text-color);
+}
+.wrapper{
+	max-width: 1200px;
+    margin: 0 auto;
+}
+.column{
+    width: 40%;
+    background-color: var(--gray);
+    padding: 0 50px 0 70px;
+}
+.column_main{
+    width: 60%;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
+}
+.main{
+    display: flex;
+}
+.document-title{
+    padding-bottom: 30px;
+}
+.document-section{
+    padding-bottom: 50px;
+}
+.date{
+    background-color: var(--main-color);
+    color: var(--text-color);
+    border-radius: 4px;
+    display: inline-block;
+    font-family: 'ralewaybold';
+    padding: 2px 10px;
+}
+.document-link{    
+    color: var(--main-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all .4s linear;
+}
+.document-link:hover{
+    text-decoration: underline;
+    color: var(--orange);
+}
+.document-list{
+    padding-left: 30px;
+}
+.document-list__item{
+    position: relative;
+    margin-bottom: 6px;
+}
+.document-list__item::before{
+    content: '';
+    position: absolute;
+    display: block;
+    top: 6px;
+    left: -15px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+}
+.document-text{
+    padding-bottom: 10px;
+}
+/* Main Style End */
+/* Header Style Start */
+	.header{
+        width: 100%;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .header__avatar{
+        display: flex;
+        height: 250px;
+        justify-content: center;
+        width: 250px;
+        margin: 30px auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .header__picture{
+        border-radius: 50%;
+        width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        border: 15px solid var(--main-color);
+    }
+	.header__title{
+		font-family: 'ralewaybold';
+		font-size: 45px;
+	}
+	.header__title_span{
+		color: var(--main-color);
+		font-family: 'storytella';
+		font-size: 55px;
+		line-height: 55px;
+    }
+    .header__subtitle{
+        font-size: 25px;
+    }
+/* Header Style End */
+/* Contact Style Start */
+    .contact__block{
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    .contact__image{
+        background-position: center left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+    .contact__image_github{
+        background-image: url(../images/github.svg);
+    }
+    .contact__image_telegram{
+        background-image: url(../images/telegram.svg);
+    }
+    .contact__image_email{
+        background-image: url(../images/email.svg);
+    }
+    .contact__image_map{
+        background-image: url(../images/map.svg);
+    }
+    .contact__link{
+        color: var(--text-color);
+        text-decoration: none;
+        transition: all .4s linear;
+    }
+    .contact__link:hover{
+        color: var(--main-color);
+        text-decoration: underline;
+    }
+/* Contact Style End */
+/* Education Style Start */
+    .education__block{
+        margin-bottom: 20px;
+    }
+    .education__date{
+        margin-bottom: 10px;
+    }
+    .education__text{
+        font-weight: 600;
+    }
+/* Education Style End */
+/* Languages Style Start */
+    .languages__item{
+        padding: 0 0 10px 15px;
+        position: relative;
+    }
+    .languages__item:last-child{
+        padding: 0 0 0 15px;
+    }
+    .languages__item::before{
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 0;
+        display: block;
+        width: 10px;
+        height: 10px;
+        background-color: var(--main-color);
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+/* Languages Style End */
+/* Skills Style Start */
+    .skills__block{
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
+    .skills__text{
+        width: 700px;
+        margin-right: 15px;
+        font-weight: 400;
+    }
+    .skills-list{
+        display: flex;
+        align-items: center;
+    }
+
+    
+/* Skills Style End */
+/* Work Style Start */
+    .work__block{
+        margin-bottom: 30px;
+    }
+    .work__head{
+        margin-bottom: 10px;
+    }
+    .work__info{
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .work__date{
+        margin-right: 10px;
+        text-align: center;
+    }
+/* Work Style End */
+/* Hobby Style Start */
+    .hobby__wrapper{
+        display: flex;
+        align-items: center;
+    }
+    .hobby__row{
+        width: 50%;
+    }
+    .hobby__block{
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .hobby__dot{
+        width: 10px;
+        height: 10px;
+        background-color: var(--main-color);
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .hobby__text{
+        font-weight: 600;
+    }
+/* Hobby Style End */
+/* Footer Style Start */
+    .footer{
+        background-color: var(--light-gray);
+        padding: 10px 0;
+        text-align: center;
+    }
+    .footer__inner{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer__block:nth-child(2){
+        margin-right: 10px;
+    }
+    .footer__social{
+        background-image: url(../images/github.svg);
+        background-position: center left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+    .footer__social_yt{
+        background-image: url(../images/youtube.svg);
+        margin-right: 0;
+        width: 40px;
+        background-size: contain;
+    }
+    .footer__text{
+        display: flex;
+        align-items: center;
+    }
+    .footer__image{
+        width: 70px;
+        margin: 0 10px;
+    }
+    .footer__link{
+        color: var(--text-color);
+        margin-right: 10px;
+    }
+/* Footer Style End */
+/* Media Queries Start */
+    @media (max-width: 900px){
+        .column{
+            padding: 0 20px;
+        }
+        .column_main{
+            padding: 0 20px;
+        }
+        .header::before{
+            width: 200px;
+            height: 200px;
+        }
+        .header__avatar{
+            width: 200px;
+            height: 200px;
+        }
+        .header__avatar::after{
+            width: 50px;
+            height: 50px;
+            right: 4px;
+        }
+        .header__title{
+            font-size: 40px;
+        }
+    }
+    @media (max-width: 768px){
+        .work__info{
+            flex-direction: column;
+            align-items: baseline;
+        }
+        .work__date{
+            margin-bottom: 5px;
+        }
+    }
+    @media (max-width: 650px){
+        .column_header{
+            background-color: var(--gray);
+        }
+        .main{
+            flex-direction: column;
+        }
+        .column{
+            width: 100%;
+        }
+        .document-section {
+            padding-bottom: 15px;
+        }
+        .document-title {
+            padding-bottom: 15px;
+        }
+        .about{
+            padding-top: 20px;
+        }
+    }
+    @media (max-width: 510px){
+        .header{
+            flex-direction: column;
+        }
+        .header__avatar{
+            margin: 20px auto;
+        }
+        .header__title{
+            text-align: center;
+        }
+        .header__subtitle{
+            text-align: center;
+            padding-bottom: 20px;
+        }
+    }
+    @media (max-width: 420px){
+        .footer__inner{
+            flex-direction: column;
+        }
+        .footer__block:nth-child(2){
+            margin-right: 0;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .footer__social{
+            margin-right: 0;
+        }
+    }
+    @media (max-width: 380px){
+        .education__block {
+            margin-bottom: 20px;
+        }
+        .work__block {
+            margin-bottom: 10px;
+        }
+        .hobby__wrapper{
+            flex-direction: column;
+        }
+        .hobby__row{
+            width: 100%;
+        }
+    }
+/* Media Queries End */
+
+</style>
 <body>
     <div class="wrapper">
 		<header class="header">
 			<div class="column">
 				<figure class="header__avatar">
-					<img src="img_1996.jpg" class="header__picture" alt="Header avatar">
+					<img src="img_19961.jpg" class="header__picture" alt="Header avatar">
 				</figure>
 			</div>
 			<div class="column column_main column_header">
@@ -35,7 +438,7 @@
 						<li class="contact__block">
 							<div class="contact__image contact__image_tel"></div>
 							<div class="contact__text">
-								<a href="+79618533777" target="_blank" class="contact__link">+79618533777</a>
+								<a href="callto:+79618533777" target="_blank" class="contact__link">+79618533777</a>
 							</div>
 						</li>
 						<li class="contact__block">
@@ -61,105 +464,27 @@
 				<section class="document-section education">
 					<h2 class="document-title">Education</h2>
 					<div class="education__block">
-						<div class="date education__date">2004-2008</div>
-						<p class="education__text">Grodno State Medical College, nurse</p>
+						<div class="date education__date">1999-2000</div>
+						<p class="education__text">Kuban Institute of Management and Entrepreneurship</p>
 					</div>
 					<div class="education__block">
-						<div class="date education__date">2010-2016</div>
-						<p class="education__text">Yanka Kupala Belarusian State University, Faculty of Psychology</p>
+						<div class="date education__date">2000-2005</div>
+						<p class="education__text">Kuban State Agrarian University</p>
 					</div>
 					<div class="education__block">
-						<div class="date education__date">02/2017-04/2017</div>
-						<p class="education__text">Loftschool Web Development Course</p>
+						<div class="date education__date">2012-2013</div>
+						<p class="education__text">Institute of Economics and Entrepreneurship</p>
 					</div>
-				</section>
-				<section class="document-section skills">
-					<h2 class="document-title">Skills</h2>
-					<ul class="skills__wrapper">
-						<li class="skills__block">
-							<p class="skills__text">HTML5</p>
-							<ul class="skills-list">
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item skills-list__item_gray"></li>
-							</ul>
-						</li>
-						<li class="skills__block">
-							<p class="skills__text">CSS3</p>
-							<ul class="skills-list">
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item skills-list__item_gray"></li>
-							</ul>
-						</li>
-						<li class="skills__block">
-							<p class="skills__text">JS basic</p>
-							<ul class="skills-list">
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item skills-list__item_gray"></li>
-								<li class="skills-list__item skills-list__item_gray"></li>
-								<li class="skills-list__item skills-list__item_gray"></li>
-								<li class="skills-list__item skills-list__item_gray"></li>
-							</ul>
-						</li>
-						<li class="skills__block">
-							<p class="skills__text">PUG</p>
-							<ul class="skills-list">
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item skills-list__item_gray"></li>
-								<li class="skills-list__item skills-list__item_gray"></li>
-							</ul>
-						</li>
-						<li class="skills__block">
-							<p class="skills__text">SCSS</p>
-							<ul class="skills-list">
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item skills-list__item_gray"></li>
-								<li class="skills-list__item skills-list__item_gray"></li>
-							</ul>
-						</li>
-						<li class="skills__block">
-							<p class="skills__text">GULP</p>
-							<ul class="skills-list">
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item skills-list__item_gray"></li>
-								<li class="skills-list__item skills-list__item_gray"></li>
-								<li class="skills-list__item skills-list__item_gray"></li>
-							</ul>
-						</li>
-						<li class="skills__block">
-							<p class="skills__text">Git&Github</p>
-							<ul class="skills-list">
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item"></li>
-								<li class="skills-list__item skills-list__item_gray"></li>
-								<li class="skills-list__item skills-list__item_gray"></li>
-							</ul>
-						</li>
-					</ul>				
+					<div class="education__block">
+						<div class="date education__date">2013-2015</div>
+						<p class="education__text">Kuban State University</p>
+					</div>
 				</section>
 				<section class="document-section languages">
 					<h2 class="document-title">Foreign languages</h2>
 					<ul class="languages__list">
-						<li class="languages__item">Polish(A1)</li>
-						<li class="languages__item">English(A2)</li>
+						<li class="languages__item">Russian</li>
+						<li class="languages__item">English(pre-intermediate)</li>
 					</ul>
 				</section>
 			</div>	
@@ -167,137 +492,53 @@
 				<section class="document-section about">
 					<h2 class="document-title">About me</h2>
 					<p class="about__text">
-						Hi! I’m a junior frontend developer. I want to upgrade my skills. Now I work in not very big company. My job responsibilites include ordinary and not the most interesting task. But in a future i’d like to work in strong team width the extraordinary prodjects. I'd like do beautiful interactive cites.
+						At this point in time, I am pursuing the goal of becoming a developer so that I do not have to be tied to one place and I can work remotely from anywhere in the world. I have been into programming since high school. I have always been interested in radio electronics.
 					</p>
 				</section>
 				<section class="document-section work">
 					<h2 class="document-title">Work Expirience</h2>
 					<div class="work__block">
-						<h3 class="work__head">Web-developer</h3>
+						<h3 class="work__head">General director</h3>
 						<div class="work__info">
 							<div class="date work__date">Present</div>
-							<p class="work__title">RocketProfit Company <a href="https://rocketprofit.com" target="_blank" class="document-link">rocketprofit.com</a></p>
+							<p class="work__title">Audit Alliance LLC <a href="https://www.aacorp.ru" target="_blank" class="document-link">aacorp.ru</a></p>
 						</div>
 						<div class="work__text">
-							<p class="document-text">
-								Remote work on schedule. Creation of landing pages and transit pages according to a specific technical specification, making edits to existing projects. Examples of my works:</p>
-							<ul class="document-list">
-								<li class="document-list__item"><a href="http://land14-100993-free.gypertolife.ru" target="_blank" class="document-list__link document-link">land14-100993-free.gypertolife.ru</a></li>
-								<li class="document-list__item"><a href="http://pr4-100993-thail.dialine-capsules.ru" target="_blank" class="document-list__link document-link">pr4-100993-thail.dialine-capsules.ru</a></li>
-								<li class="document-list__item"><a href="http://land9-free.difort-diabet.ru" target="_blank" class="document-list__link document-link">land9-free.difort-diabet.ru</a></li>
-								<li class="document-list__item"><a href="http://land4-196rub.fle-aton.ru" target="_blank" class="document-list__link document-link">land4-196rub.fle-aton.ru</a></li>
-							</ul>
+							<p class="document-text">The company provides services in the field of audit of financial statements, business consulting and business education.</p>
 						</div>
 					</div>
 					<div class="work__block">
-						<h3 class="work__head">Web-developer</h3>
+						<h3 class="work__head">Director</h3>
 						<div class="work__info">
-							<div class="date work__date">04/2020-06/2020</div>
-							<p class="work__title">Marketing agency Lapkin Lab <a href="https://msk.lapkinlab.ru" target="_blank" class="document-link">msk.lapkinlab.ru</a></p>
+							<div class="date work__date">Present</div>
+							<p class="work__title">Construction company </p>
 						</div>
 						<div class="work__text">
-							<p class="document-text">One-time projects for page and landing page layout. Examples: </p>
-							<ul class="document-list">
-								<li class="document-list__item">Creating a page for the Lapkin Lab website using the AmoCRM system - <a href="https://msk.lapkinlab.ru/amocrm" target="_blank" class="document-list__link document-link">msk.lapkinlab.ru/amocrm</a></li>
-								<li class="document-list__item">Creating a layout for a promo page to promote mini-landing pages - <a href="https://minilanding.lapkinlab.ru/" target="_blank" class="document-list__link document-link">minilanding.lapkinlab.ru</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="work__block">
-						<h3 class="work__head">Web-developer</h3>
-						<div class="work__info">
-							<div class="date work__date">2019-2020</div>
-							<p class="work__title">Line Landing <a href="https://line-landing.by" target="_blank" class="document-link">line-landing.by</a></p>
-						</div>
-						<div class="work__text">
-							<p class="document-text">Project work. Website development on WordPress based on the Elementor constructor. In addition, a large amount of work was carried out on manual customization of sites according to the design layout, namely: additional css-styles, adaptive version. For online stores, the Woocommerce plugin was used, for some tasks it was necessary to find solutions and hooks that were not supported in the standard version of this plugin.</p>
-							<p class="document-text">Work examples:</p>
-							<ul class="document-list">
-								<li class="document-list__item"><a href="https://biocom.by/" target="_blank" class="document-list__link document-link">biocom.by</a> (work in progress, 
-									layout of a multi-page site without an Elementor)</li>
-								<li class="document-list__item"><a href="https://lxt.by" target="_blank" class="document-list__link document-link">lxt.by</a></li>
-								<li class="document-list__item"><a href="http://karieragrodno.by" target="_blank" class="document-list__link document-link">karieragrodno.by</a></li>
-								<li class="document-list__item"><a href="http://belel.by" target="_blank" class="document-list__link document-link">belel.by</a></li>
-								<li class="document-list__item"><a href="http://grodnotv.by" target="_blank" class="document-list__link document-link">grodnotv.by</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="work__block">
-						<h3 class="work__head">Web-developer</h3>
-						<div class="work__info">
-							<div class="date work__date">12/2019-02/2020</div>
-							<p class="work__title">Hotey Company</p>
-						</div>
-						<div class="work__text">
-							<p class="document-text">Participated in the team development of government tenders. One of the projects not covered by the NDA can be seen at <a href="https://github.com/estydaven/surgut" class="document-list__link document-link">github.com/estydaven/surgut</a> (repository). I cannot give a link to this website hosted on the hosting, because the customer accepted the job, but did not pay for Bitrix hosting.</p>
-						</div>
-					</div>
-					<div class="work__block">
-						<h3 class="work__head">Web-developer</h3>
-						<div class="work__info">
-							<div class="date work__date">2017-2019</div>
-							<p class="work__title">Selling company Kupiltovar</p>
-						</div>
-						<div class="work__text">
-							<p class="document-text">Creation of landing pages for the kupiltovar.ru sales network.</p>
-							<p class="document-text">Examples of my works: </p>
-							<ul class="document-list">
-								<li class="document-list__item"><a href="https://kanken.kupiltovar.ru" target="_blank" class="document-list__link document-link">kanken.kupiltovar.ru</a></li>
-								<li class="document-list__item"><a href="https://elki.kupiltovar.ru" target="_blank" class="document-list__link document-link">elki.kupiltovar.ru</a></li>
-								<li class="document-list__item" ><a href="https://elka.kupiltovar.ru" target="_blank" class="document-list__link document-link">elka.kupiltovar.ru</a></li>
-								<li class="document-list__item"><a href="https://maska.kupiltovar.ru" target="_blank" class="document-list__link document-link">maska.kupiltovar.ru</a></li>
-							</ul>
-							<p>On all landing pages the following was done:	Implementation of analytics counters (Yandex.Metrica, Google Analytics, May Target), setting up analyst goals and tracking their work, setting up the upsell and cross-selling system E-Autopay.com (creating upsell pages for landing pages, creating products in the system and linking them to forms on the site so that the purchase and order on the landing page are made automatically), optimization of landing pages by Google Page Speed, Test Pingdom, Ping Admin.</p>
-						</div>
-					</div>
-					<div class="work__block">
-						<h3 class="work__head">Freelancer (copywriter, SMM-manager)</h3>
-						<div class="work__info">
-							<div class="date work__date">2013-2017</div>
-						</div>
-						<div class="work__text">
-							<p>At first I work a copywriter and a SMM-manager. Than I started taking work on creating landing pages.</p>
+							<p class="document-text">The company is engaged in the construction and management of commercial real estate </p>
 						</div>
 					</div>
 				</section>
-				<section class="document-section hobby">
-					<h2 class="document-title">Hobbies</h2>
-					<div class="hobby__wrapper">
-						<div class="hobby__row">
-							<div class="hobby__block">
-								<div class="hobby__dot"></div>
-								<p class="hobby__text">Reading books</p>
-							</div>
-							<div class="hobby__block">
-								<div class="hobby__dot"></div>
-								<p class="hobby__text">Ornitology</p>
-							</div>
-						</div>
-						<div class="hobby__row">
-							<div class="hobby__block">
-								<div class="hobby__dot"></div>
-								<p class="hobby__text">Fire Show</p>
-							</div>
-							<div class="hobby__block">
-								<div class="hobby__dot"></div>
-								<p class="hobby__text">Nature photography</p>
-							</div>
-						</div>
-					</div>
+				<section class="document-section skills">
+					<h2 class="document-title">Awards</h2>
+					<ul class="skills__wrapper">
+						<li class="skills__block">
+							<p class="skills__text">Diploma for scientific contribution to the development of the economy of the Krasnodar region.</p>
+						</li>
+						<li class="skills__block">
+							<p class="skills__text">A medal by decree of the President of the Russian Federation for active participation in the population census.</p>
+						</li>
+						<li class="skills__block">
+							<p class="skills__text">I am the author of many scientific articles on economics and jurisprudence.	</p>
+						</li>
+					</ul>				
 				</section>
 			</div>
 		</main>
 		<footer class="footer">
 			<div class="footer__inner">
-				<div class="footer__block">
-					<a href="https://github.com/estydaven" target="_blank" class="footer__social"></a>
-				</div>
-				<div class="footer__block">
-					<div class="footer__text">Made with love in <img src="images/rs-logo.svg" class="footer__image" alt=""> <a href="https://rs.school/js/" class="footer__link">preschool course</a> 2021</div>
+							<div class="footer__block">
+					<div class="footer__text"><img src="https://rs.school/images/rs_school_js.svg" class="footer__image" alt="rsschool logo"> <a href="https://rs.school/js/" class="footer__link">preschool course</a> 2022</div>
 				</div>				
-				<div class="footer__block">
-					<a href="https://youtu.be/-rzCeWU_23k" target="_blank" class="footer__social footer__social_yt"></a>
-				</div>
 			</div>
 		</footer>
 	</div>
