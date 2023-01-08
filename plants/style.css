@@ -1,0 +1,48 @@
+body {
+position: absolute;
+width: 1440px;
+left: 0px;
+top: 0px;
+
+background: #EDF2EC;}
+
+
+.nav {
+    /* nav */
+
+
+position: absolute;
+width: 452px;
+height: 50px;
+left: 879px;
+top: 42px;
+}
+.header{
+    display: flex;
+    position: absolute;
+    width: 1440px;
+    height: 134px;
+    left: 0px;
+    top: 0px;
+    
+    background: #EDF2EC;} 
+
+.header__logo-line{
+    /* Frame 1 */
+
+
+position: absolute;
+width: 100px;
+height: 50px;
+left: 98px;
+top: 39px;
+}
+
+
+position: absolute;
+width: 1440px;
+height: 134px;
+left: 0px;
+top: 0px;
+
+background: #EDF2EC;}
